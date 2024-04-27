@@ -1,0 +1,72 @@
+{% extends 'core/base.html' %}
+{% block content %}
+<style>
+  /* Add CSS styles here */
+  .container {
+    height: 100vh;
+
+  }
+  .col-6 {
+    position: sticky;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container {
+    text-align: center;
+    color: black;
+    padding: 20px;
+  }
+  h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+  h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #3498db;
+    border: none;
+    cursor: pointer;
+    animation: fadeInUp 1s ease forwards;
+    opacity: 0;
+  }
+  /* Define animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+<div class="container">
+  <div class="row">
+    <div class="col-6" style="background-color: #CDCDCD;">
+      <div class="text-container">
+        <h1>For Customers:</h1>
+        <h2>Get all your services in one place with our easy-to-use platform</h2>
+        <button type="button" class="btn btn-secondary"><a href="{% url 'register' %}" style="text-decoration:none; color: White;">Sign Up</a></button>
+      </div>
+    </div>
+    <div class="col-6" style="background-color: #87CEEB;">
+      <div class="text-container">
+        <h1>For Experts:</h1>
+        <h2>Provide your customers with the best possible service with our tools and resources.</h2>
+        <button type="button" class="btn btn-secondary"><a href="{% url 'expert_register' %}" style="text-decoration:none; color: White;">Sign Up</a></button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
